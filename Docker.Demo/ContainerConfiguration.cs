@@ -20,7 +20,7 @@ namespace Docker.Demo
 
             containerBuilder.RegisterType<PrintSettingsProvider>().As<IPrintSettingsProvider>().SingleInstance();
             containerBuilder.RegisterType<ConsolePrinter>().As<IConsolePrinter>().SingleInstance();
-            containerBuilder.RegisterType<ContinuousRunningProcessor>().SingleInstance();
+            containerBuilder.RegisterType<ContinuousRunningProcessor>().SingleInstance().Named<string>("SomeName");
 
             var container = containerBuilder.Build();
 
